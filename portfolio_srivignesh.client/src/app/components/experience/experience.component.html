@@ -20,7 +20,7 @@
           <div class="exp-body">
             <div class="exp-header">
               <div>
-                <span class="exp-year-mobile">{{ exp.year }} · {{ exp.period }}</span>
+                <span class="exp-year-mobile" [class.current-year-mobile]="exp.year === currentYear" [style.color]="exp.year === currentYear ? '#F5C842' : null">{{ exp.year }} · {{ exp.period }}<span *ngIf="exp.year === currentYear" class="now-badge">NOW</span></span>
                 <h3>{{ exp.role }}</h3>
                 <p class="exp-company">
                   <i class="fas fa-building"></i> {{ exp.company }}
