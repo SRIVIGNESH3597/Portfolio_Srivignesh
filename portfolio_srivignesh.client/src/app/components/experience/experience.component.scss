@@ -360,18 +360,54 @@ ul {
 }
 
 @media (max-width: 768px) {
-  .exp-item { grid-template-columns: 0 24px 1fr; }
+  /* Switch from timeline grid to full-width cards */
+  .exp-list { gap: 12px; }
+
+  .exp-item {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.3s;
+
+    &.active {
+      border-color: rgba(232,184,75,0.4);
+      box-shadow: 0 4px 20px rgba(232,184,75,0.06);
+    }
+
+    &:last-child .exp-track { display: none; }
+  }
+
   .exp-year-col { display: none; }
-  .exp-year-mobile { display: block; }
+  .exp-line { display: none; }
+
+  .exp-year-mobile {
+    display: block;
+    margin-bottom: 10px;
+  }
   .exp-item.active .exp-year-mobile { color: var(--gold); }
+
+  .exp-body {
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .exp-header {
+    padding: 0 0 12px;
+    h3 { font-size: 1rem; }
+  }
+
+  .exp-item.active .exp-details { max-height: 800px; }
+
   .edu-grid { grid-template-columns: 1fr; }
   .award-grid { grid-template-columns: 1fr; }
-  .exp-body { padding-bottom: 28px; }
 }
 
 @media (max-width: 480px) {
-  .exp-header h3 { font-size: 1rem; }
+  .exp-item { padding: 16px; }
   .exp-company { font-size: 0.78rem; }
+  .exp-chips { gap: 6px; }
   .exp-chips span { font-size: 0.7rem; padding: 3px 10px; }
   .edu-card { padding: 20px; }
   .edu-card h3 { font-size: 1rem; }

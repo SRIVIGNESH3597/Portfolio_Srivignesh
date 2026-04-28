@@ -23,7 +23,7 @@
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   text-decoration: none;
 
   .logo-mark {
@@ -39,28 +39,35 @@
 
   .logo-divider {
     width: 1.5px;
-    align-self: stretch;
-    background: var(--gold);
+    height: 36px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(200,146,10,0.4) 20%,
+      #F5C842 50%,
+      rgba(200,146,10,0.4) 80%,
+      transparent 100%
+    );
+    box-shadow: 0 0 6px 1px rgba(232,184,75,0.55);
     flex-shrink: 0;
   }
 
   .logo-wordmark {
     display: flex;
     flex-direction: column;
-    gap: 3px;
-    padding-right: 11px;
-    border-right: 1.5px solid var(--gold);
+    justify-content: center;
+    gap: 5px;
   }
 
   .logo-title {
     display: flex;
     align-items: baseline;
-    gap: 8px;
+    gap: 6px;
   }
 
   .logo-name {
     font-family: 'Inter', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.01em;
@@ -68,7 +75,7 @@
 
   .logo-initial {
     font-family: 'Inter', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--gold);
   }
@@ -76,24 +83,24 @@
   .logo-sub {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
   }
 
   .logo-sub-line {
-    display: block;
-    width: 22px;
+    flex: 1;
     height: 1px;
     background: var(--gold);
-    opacity: 0.5;
+    opacity: 0.4;
+    min-width: 18px;
+    max-width: 28px;
   }
 
   .logo-sub-tag {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.65rem;
+    font-size: 0.5rem;
     color: var(--gold);
     opacity: 0.8;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
+    line-height: 1;
+    flex-shrink: 0;
   }
 }
 
