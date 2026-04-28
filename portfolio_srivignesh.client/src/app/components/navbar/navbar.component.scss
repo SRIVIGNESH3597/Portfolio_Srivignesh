@@ -11,6 +11,13 @@
     padding: 14px 0;
     border-bottom: 1px solid var(--border);
   }
+
+  &.menu-open {
+    z-index: 9999;
+    backdrop-filter: none !important;
+    background: #050508 !important;
+    transition: none !important;
+  }
 }
 
 .nav-wrap {
@@ -136,6 +143,21 @@
   }
 }
 
+.nav-close {
+  display: none;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  z-index: 1002;
+}
+
 .nav-cta {
   background: transparent !important;
   color: var(--gold) !important;
@@ -183,11 +205,13 @@
 
 @media (max-width: 768px) {
   .burger { display: flex; }
+  .nav-close { display: block; }
   .nav-links {
     display: none;
     position: fixed;
     inset: 0;
-    background: var(--bg);
+    background: #050508;
+    z-index: 1001;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -198,24 +222,58 @@
     li {
       width: 100%;
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-left: 2px solid transparent;
+      transition: border-color 0.25s;
+
+      &:hover {
+        border-left-color: var(--gold);
+      }
 
       a {
         display: flex;
         align-items: center;
         padding: 16px 0;
+        padding-left: 0;
         font-size: 1rem;
         color: var(--text-2);
+        transition: color 0.25s, padding-left 0.25s;
 
         .link-num {
           font-size: 0.75rem;
           min-width: 36px;
         }
 
-        &:hover { color: var(--text); }
+        &:hover {
+          color: var(--gold);
+          padding-left: 8px;
+        }
       }
     }
 
-    li:last-child { border-bottom: none; }
+    li:last-child {
+      border-bottom: none;
+      width: auto;
+      padding: 16px 0 8px;
+      margin-left: auto;
+    }
+
+    .nav-cta {
+      display: inline-block !important;
+      margin-top: 8px;
+      border: 1px solid rgba(232,184,75,0.5) !important;
+      padding: 12px 32px !important;
+      border-radius: 4px !important;
+      font-size: 0.88rem !important;
+      color: var(--gold) !important;
+      background: transparent !important;
+      text-align: center !important;
+      letter-spacing: 0.04em;
+      width: auto !important;
+      &:hover {
+        background: rgba(232,184,75,0.1) !important;
+        border-color: var(--gold) !important;
+      }
+    }
 
     &.open { display: flex; }
   }

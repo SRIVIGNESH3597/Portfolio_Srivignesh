@@ -1,4 +1,4 @@
-<nav class="nav" [class.scrolled]="scrolled">
+<nav class="nav" [class.scrolled]="scrolled" [class.menu-open]="menuOpen">
   <div class="container nav-wrap">
     <a href="#hero" class="nav-logo">
       <!-- Luxury serif monogram: gold S overlapping silver T -->
@@ -43,6 +43,7 @@
       <div class="logo-divider"></div>
     </a>
     <ul class="nav-links" [class.open]="menuOpen">
+      <button class="nav-close" (click)="closeMenu()">&#x2715;</button>
       @for (link of links; track link.label; let i = $index) {
         <li>
           <a [href]="link.href" (click)="closeMenu()">
