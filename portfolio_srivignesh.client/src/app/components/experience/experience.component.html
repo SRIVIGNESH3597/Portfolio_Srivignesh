@@ -8,9 +8,9 @@
 
     <div class="exp-list">
       @for (exp of jobs; track exp.role; let i = $index) {
-        <div class="exp-item" [class.active]="activeJobIdx === i" (click)="activeJobIdx = activeJobIdx === i ? -1 : i">
+        <div class="exp-item" [class.active]="activeJobIdx === i" [class.current-item]="exp.year === currentYear" (click)="activeJobIdx = activeJobIdx === i ? -1 : i">
           <div class="exp-year-col">
-            <span class="exp-year">{{ exp.year }}</span>
+            <span class="exp-year" [class.current-year]="exp.year === currentYear" [style.color]="exp.year === currentYear ? '#F5C842' : null" [style.textShadow]="exp.year === currentYear ? '0 0 12px rgba(232,184,75,0.45)' : null">{{ exp.year }}</span>
             <span class="exp-period">{{ exp.period }}</span>
           </div>
           <div class="exp-line">

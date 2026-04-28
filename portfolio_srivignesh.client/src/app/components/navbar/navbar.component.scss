@@ -48,7 +48,6 @@
       rgba(200,146,10,0.4) 80%,
       transparent 100%
     );
-    box-shadow: 0 0 6px 1px rgba(232,184,75,0.55);
     flex-shrink: 0;
   }
 
@@ -84,21 +83,20 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    width: 100%;
   }
 
   .logo-sub-line {
     flex: 1;
     height: 1px;
     background: var(--gold);
-    opacity: 0.4;
-    min-width: 18px;
-    max-width: 28px;
+    opacity: 0.6;
   }
 
   .logo-sub-tag {
-    font-size: 0.5rem;
+    font-size: 0.55rem;
     color: var(--gold);
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1;
     flex-shrink: 0;
   }

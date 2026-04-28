@@ -39,6 +39,40 @@
 
 .exp-item.active .exp-year { color: var(--gold); }
 
+/* Always highlight the current year item */
+.exp-item.current-item .exp-dot {
+  border-color: var(--gold);
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--glow-gold);
+}
+
+.exp-item.current-item .exp-year {
+  color: var(--gold) !important;
+  text-shadow: 0 0 12px rgba(232,184,75,0.45);
+}
+
+.exp-year.current-year {
+  color: var(--gold) !important;
+  text-shadow: 0 0 12px rgba(232,184,75,0.45);
+  position: relative;
+
+  &::after {
+    content: 'NOW';
+    position: absolute;
+    top: -2px;
+    right: -36px;
+    font-size: 0.45rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--bg);
+    background: var(--gold);
+    padding: 2px 5px;
+    border-radius: 3px;
+    line-height: 1;
+  }
+}
+
 .exp-line {
   display: flex;
   flex-direction: column;

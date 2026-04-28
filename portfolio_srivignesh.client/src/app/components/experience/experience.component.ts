@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 export class ExperienceComponent {
   activeJobIdx = 0;
   activeEduIdx = 0;
+  currentYear = new Date().getFullYear().toString();
 
   jobs = [
     {
