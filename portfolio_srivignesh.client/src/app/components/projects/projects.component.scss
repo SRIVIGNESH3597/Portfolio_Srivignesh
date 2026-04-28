@@ -209,8 +209,23 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .featured-card { grid-template-columns: 1fr 1.2fr; }
+  .feat-visual { padding: 32px; min-height: 260px; }
+  .feat-content { padding: 36px; }
+  .proj-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+}
+
 @media (max-width: 768px) {
   .featured-card { grid-template-columns: 1fr; }
   .feat-visual { display: none; }
-  .feat-content { padding: 32px; }
+  .feat-content { padding: 28px; gap: 12px; }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 540px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-card { padding: 24px; }
+  .feat-content { padding: 24px; }
+  .feat-content h3 { font-size: 1.3rem; }
 }

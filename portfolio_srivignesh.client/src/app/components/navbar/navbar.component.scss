@@ -172,6 +172,10 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .nav-links { gap: 24px; }
+}
+
 @media (max-width: 768px) {
   .burger { display: flex; }
   .nav-links {
@@ -210,4 +214,9 @@
 
     &.open { display: flex; }
   }
+}
+
+@media (max-width: 400px) {
+  .logo-wordmark { display: none; }
+  .logo-divider { display: none; }
 }

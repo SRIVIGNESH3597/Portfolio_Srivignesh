@@ -91,10 +91,27 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .skill-row {
+    grid-template-columns: 160px auto 1fr;
+    padding: 20px 24px;
+    gap: 20px;
+  }
+  .row-num { font-size: 1.4rem; min-width: 36px; }
+}
+
 @media (max-width: 768px) {
   .skill-row {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
+    padding: 20px;
   }
   .row-divider { display: none; }
+  .row-left { gap: 12px; }
+  .row-num { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .skill-row { padding: 16px; }
+  .tag { font-size: 0.78rem; padding: 5px 12px; }
 }
