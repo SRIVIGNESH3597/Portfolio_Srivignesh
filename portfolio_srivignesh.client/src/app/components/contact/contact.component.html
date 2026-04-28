@@ -1,0 +1,64 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-label"><span class="num">contact</span></div>
+    <h2 class="section-heading">Let's <span>Build Together</span></h2>
+    <p class="section-desc">Have a project in mind, want to collaborate, or just want to say hello? My inbox is always open — I'll get back to you promptly.</p>
+
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <p class="contact-intro">
+          Have a project in mind or just want to say hello?
+          My inbox is always open — I'll get back to you promptly.
+        </p>
+
+        <div class="contact-items">
+          @for (c of contactInfo; track c.label) {
+            <a [href]="c.href" target="_blank" class="c-item">
+              <div class="c-icon"><i [class]="c.icon"></i></div>
+              <div>
+                <span class="c-label">{{ c.label }}</span>
+                <span class="c-value">{{ c.value }}</span>
+              </div>
+              <i class="fas fa-arrow-right c-arrow"></i>
+            </a>
+          }
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/srivignesh-t-0430b2176/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="onSubmit()" #f="ngForm">
+        @if (submitted) {
+          <div class="form-success">
+            <i class="fas fa-check-circle"></i> Message sent successfully!
+          </div>
+        }
+        <div class="field-row">
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" [(ngModel)]="form.name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="field">
+            <label>Email Address</label>
+            <input type="email" [(ngModel)]="form.email" name="email" placeholder="john@example.com" required />
+          </div>
+        </div>
+        <div class="field">
+          <label>Subject</label>
+          <input type="text" [(ngModel)]="form.subject" name="subject" placeholder="Project Collaboration" required />
+        </div>
+        <div class="field">
+          <label>Message</label>
+          <textarea [(ngModel)]="form.message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" [disabled]="f.invalid">
+          Send Message <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

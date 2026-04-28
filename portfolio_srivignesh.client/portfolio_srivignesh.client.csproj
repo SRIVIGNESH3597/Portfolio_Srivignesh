@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <DefaultItemExcludes>$(DefaultItemExcludes);node_modules\**;dist\**;.angular\**</DefaultItemExcludes>
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="src\**" />
+    <Content Include="public\**" />
+    <Content Include="angular.json" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig*.json" />
+  </ItemGroup>
+
+  <Target Name="NpmInstall" BeforeTargets="Build" Condition="!Exists('node_modules')">
+    <Exec Command="npm install" WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+
+  <Target Name="NpmBuild" AfterTargets="Build">
+    <Exec Command="npm run build:prod" WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+</Project>

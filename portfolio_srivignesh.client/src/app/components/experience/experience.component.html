@@ -1,0 +1,100 @@
+<section id="experience" class="experience">
+  <div class="container">
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section-label"><span class="num">experience</span></div>
+    <h2 class="section-heading">Work <span>Experience</span></h2>
+    <p class="section-desc">My professional journey at Cognizant — delivering Angular-powered solutions for global enterprise clients across finance, humanitarian, and utility sectors.</p>
+
+    <div class="exp-list">
+      @for (exp of jobs; track exp.role; let i = $index) {
+        <div class="exp-item" [class.active]="activeJobIdx === i" (click)="activeJobIdx = activeJobIdx === i ? -1 : i">
+          <div class="exp-year-col">
+            <span class="exp-year">{{ exp.year }}</span>
+            <span class="exp-period">{{ exp.period }}</span>
+          </div>
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-track"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <h3>{{ exp.role }}</h3>
+                <p class="exp-company">
+                  <i class="fas fa-building"></i> {{ exp.company }}
+                  @if (exp.via) { <span class="via">· via {{ exp.via }}</span> }
+                  &nbsp;·&nbsp;
+                  <i class="fas fa-map-marker-alt"></i> {{ exp.location }}
+                </p>
+              </div>
+              <i class="fas fa-chevron-down exp-arrow"></i>
+            </div>
+            <div class="exp-details">
+              <p class="exp-desc">{{ exp.description }}</p>
+              <ul>
+                @for (h of exp.highlights; track h) {
+                  <li><span class="bullet">▸</span> {{ h }}</li>
+                }
+              </ul>
+              <div class="exp-chips">
+                @for (t of exp.tech; track t) { <span>{{ t }}</span> }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="edu-divider">
+      <div class="section-label" style="margin-top: 80px"><span class="num">education</span></div>
+      <h2 class="section-heading">Academic <span>Background</span></h2>
+      <p class="section-desc">My educational foundation — spanning Electronics & Instrumentation, Embedded Systems, and currently pursuing an MBA in Human Resource Management.</p>
+    </div>
+
+    <div class="edu-grid">
+      @for (edu of education; track edu.degree; let i = $index) {
+        <div class="edu-card" [class.active]="activeEduIdx === i" (click)="activeEduIdx = i">
+          <div class="edu-card-top">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-badge">{{ edu.grade }}</div>
+          </div>
+          <h3>{{ edu.degree }}</h3>
+          <p class="edu-inst"><i class="fas fa-university"></i> {{ edu.institution }}</p>
+          <p class="edu-loc"><i class="fas fa-map-marker-alt"></i> {{ edu.location }}</p>
+          <p class="edu-period"><i class="fas fa-calendar"></i> {{ edu.period }}</p>
+          <ul class="edu-points">
+            @for (h of edu.highlights; track h) {
+              <li><span class="bullet">▸</span> {{ h }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+    <!-- AWARDS & CERTIFICATIONS -->
+    <div id="awards" class="edu-divider">
+      <div class="section-label" style="margin-top: 80px"><span class="num">awards & certifications</span></div>
+      <h2 class="section-heading">Achievements & <span>Certifications</span></h2>
+      <p class="section-desc">Recognition and certifications earned through continuous learning, professional excellence, and team contributions at Cognizant.</p>
+    </div>
+
+    <div class="award-grid">
+      @for (a of awards; track a.title) {
+        <div class="award-card">
+          <div class="award-icon-wrap">
+            <i [class]="a.icon"></i>
+          </div>
+          <div class="award-body">
+            <span class="award-type">{{ a.type }}</span>
+            <h4>{{ a.title }}</h4>
+            <p>{{ a.desc }}</p>
+            <span class="award-issuer"><i class="fas fa-building"></i> {{ a.issuer }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

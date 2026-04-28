@@ -1,0 +1,6 @@
+@Portfolio_Srivignesh.Server_HostAddress = http://localhost:5227
+
+GET {{Portfolio_Srivignesh.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,49 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-label"><span class="num">projects</span></div>
+    <h2 class="section-heading">Selected <span>Work</span></h2>
+    <p class="section-desc">A selection of key projects I have contributed to across enterprise clients — from finance portals and humanitarian platforms to AI-powered utilities.</p>
+
+    <!-- Featured project -->
+    <div class="featured-card">
+      <div class="feat-visual">
+        <div class="feat-mockup">
+          <div class="mockup-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-body">
+            <i [class]="projects[0].icon"></i>
+            <span>{{ projects[0].title }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="feat-content">
+        <span class="feat-label">Featured Project</span>
+        <h3>{{ projects[0].title }}</h3>
+        <p>{{ projects[0].description }}</p>
+        <div class="feat-tech">
+          @for (t of projects[0].tech; track t) { <span>{{ t }}</span> }
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid projects -->
+    <div class="proj-grid">
+      @for (p of projects.slice(1); track p.title) {
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-icon" [style.color]="p.color"><i [class]="p.icon"></i></div>
+            @if (p.liveUrl) {
+              <a [href]="p.liveUrl" target="_blank" class="proj-live-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            }
+          </div>
+          <h4>{{ p.title }}</h4>
+          <p>{{ p.description }}</p>
+          <div class="proj-tech">
+            @for (t of p.tech; track t) { <span>{{ t }}</span> }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

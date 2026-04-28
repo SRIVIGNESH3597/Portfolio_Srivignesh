@@ -1,0 +1,100 @@
+.skills { background: var(--bg); }
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 200px auto 1fr;
+  align-items: center;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+  gap: 32px;
+
+  &:last-child { border-bottom: none; }
+
+  &:hover {
+    background: rgba(232,184,75,0.03);
+    .row-num { color: var(--gold); }
+  }
+}
+
+.row-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.row-num {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-3);
+  transition: color 0.3s;
+  min-width: 48px;
+}
+
+.row-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  i {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+}
+
+.row-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.row-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.row-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(232,184,75,0.06);
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .row-divider { display: none; }
+}

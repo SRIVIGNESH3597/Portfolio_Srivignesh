@@ -1,0 +1,27 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="section-label"><span class="num">skills</span></div>
+    <h2 class="section-heading">My <span>Tech Stack</span></h2>
+    <p class="section-desc">A comprehensive overview of the technologies, tools, and methodologies I use to build scalable, high-performance web applications.</p>
+
+    <div class="skills-list">
+      @for (cat of categories; track cat.title; let i = $index) {
+        <div class="skill-row">
+          <div class="row-left">
+            <span class="row-num">0{{ i + 1 }}</span>
+            <div class="row-meta">
+              <i [class]="cat.icon"></i>
+              <span class="row-title">{{ cat.title }}</span>
+            </div>
+          </div>
+          <div class="row-divider"></div>
+          <div class="row-tags">
+            @for (s of cat.skills; track s) {
+              <span class="tag">{{ s }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

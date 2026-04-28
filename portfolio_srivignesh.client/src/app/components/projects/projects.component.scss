@@ -1,0 +1,216 @@
+.projects { background: var(--bg); }
+
+/* Featured */
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: border-color 0.3s;
+
+  &:hover { border-color: rgba(232,184,75,0.4); }
+}
+
+.feat-visual {
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  border-right: 1px solid var(--border);
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(232,184,75,0.08) 0%, transparent 70%);
+  }
+}
+
+.feat-mockup {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 280px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.mockup-bar {
+  background: var(--bg);
+  padding: 10px 14px;
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+
+  span {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    &:nth-child(1) { background: #ff6b6b; }
+    &:nth-child(2) { background: var(--gold); }
+    &:nth-child(3) { background: var(--emerald); }
+  }
+}
+
+.mockup-body {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  i {
+    font-size: 3rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-2);
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+}
+
+.feat-content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.feat-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.feat-content h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.feat-content p {
+  color: var(--text-2);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.feat-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: var(--gold);
+    background: rgba(232,184,75,0.07);
+    border: 1px solid rgba(232,184,75,0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+}
+
+.feat-links { display: flex; gap: 12px; margin-top: 4px; }
+
+/* Grid */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.proj-card {
+  background: var(--bg-card);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.3s;
+
+  &:hover { background: rgba(232,184,75,0.04); }
+}
+
+.proj-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.proj-icon {
+  font-size: 1.6rem;
+  opacity: 0.9;
+}
+
+.proj-links {
+  display: flex;
+  gap: 14px;
+
+  a {
+    color: var(--text-3);
+    font-size: 1rem;
+    transition: color 0.2s;
+    &:hover { color: var(--gold); }
+  }
+}
+
+.proj-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.proj-card p {
+  color: var(--text-2);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.proj-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+
+  span {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    color: var(--text-2);
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-card { grid-template-columns: 1fr; }
+  .feat-visual { display: none; }
+  .feat-content { padding: 32px; }
+}

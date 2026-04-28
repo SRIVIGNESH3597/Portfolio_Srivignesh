@@ -1,0 +1,81 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-label"><span class="num">about</span></div>
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="av-box">
+          <div class="av-box-inner">ST</div>
+          <div class="av-corner tl"></div>
+          <div class="av-corner tr"></div>
+          <div class="av-corner bl"></div>
+          <div class="av-corner br"></div>
+        </div>
+        <div class="exp-badge">
+          <span class="exp-num">3.6</span>
+          <span class="exp-label">Years of<br>Experience</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <h2 class="section-heading">Frontend Engineer<br><span>& Angular Expert</span></h2>
+        <p>
+          I'm <strong>Srivignesh T</strong>, a Associate at <strong>Cognizant</strong>
+          specializing in Frontend Development with the Angular Framework. Over 3.6 years I have
+          delivered production-grade web applications for world-class clients including
+          <strong>The Global Fund</strong> and <strong>World Vision</strong>.
+        </p>
+        <p>
+          I excel at building complex reactive forms, migrating Angular versions, resolving GIT
+          conflicts, and collaborating across onsite-offshore teams in fast-paced Agile environments.
+        </p>
+
+        <div class="about-tags">
+          <span><i class="fas fa-check"></i> Angular Reactive Forms</span>
+          <span><i class="fas fa-check"></i> Agile / Scrum</span>
+          <span><i class="fas fa-check"></i> GIT & Azure DevOps</span>
+          <span><i class="fas fa-check"></i> Version Migration</span>
+          <span><i class="fas fa-check"></i> Client Collaboration</span>
+          <span><i class="fas fa-check"></i> UAT Deployment</span>
+        </div>
+
+        <div class="info-row">
+          <div class="info-col">
+            <span class="info-label">Name</span>
+            <span class="info-val">Srivignesh T</span>
+          </div>
+          <div class="info-col">
+            <span class="info-label">Role</span>
+            <span class="info-val">Associate</span>
+          </div>
+          <div class="info-col">
+            <span class="info-label">Company</span>
+            <span class="info-val">Cognizant</span>
+          </div>
+          <div class="info-col">
+            <span class="info-label">Phone</span>
+            <span class="info-val">+91 7904106831</span>
+          </div>
+          <div class="info-col">
+            <span class="info-label">Email</span>
+            <span class="info-val">srivicky3597&#64;gmail.com</span>
+          </div>
+          <div class="info-col">
+            <span class="info-label">Languages</span>
+            <span class="info-val">Tamil, English</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-gold"><i class="fas fa-paper-plane"></i> Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      @for (s of stats; track s.label) {
+        <div class="stat-item">
+          <span class="stat-n">{{ s.value }}</span>
+          <span class="stat-l">{{ s.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
